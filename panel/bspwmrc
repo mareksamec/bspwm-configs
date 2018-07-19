@@ -1,0 +1,4 @@
+#! /bin/sh
+
+[ -e "$PANEL_FIFO" ] && bspc subscribe report > "$PANEL_FIFO" &
+ps -ef | grep -o panel > /dev/null || /home/msamec/.config/bspwm/panel/panel &

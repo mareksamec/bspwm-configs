@@ -1,0 +1,23 @@
+#!/usr/bin/bash
+
+# xtitle output
+title="%{F$COLOR_TITLE_FG}%{B$COLOR_TITLE_BG} ${line#?} %{B-}%{F-}"
+
+# Print the title
+#printf "%s\n" "%{l}${wm}%{c}$(title)%{r}${sys}"
+#echo "$(xtitle)"
+
+# Define the clock
+Clock() {
+        DATETIME=$(date "+%a %b %d, %T")
+
+        echo -n "$DATETIME"
+}
+
+# Print the clock
+
+while true; do
+	echo "%{c}$(xtitle) %{r}%{F#000000}%{B#FFFFFF} $(Clock) %{F-}%{B-}"
+	sleep 1
+done
+
